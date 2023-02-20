@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Pytania System wprowadzania i odpowiadania</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-primary navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Pytania System wprowadzania i odpowiadania</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/pytania}">System Dodawania pytan</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/quiz}">System Zadawania Pytan</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/register/new}">Rejestracja</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/login}">Logowanie</a>
+      </li>
+
+      <div th:switch="${var}">
+
+
+
+        <li class="nav-item" th:case="4">
+          <a class="nav-link" th:href="@{/wyloguj}">Wyloguj</a>
+
+          <a class="nav-link" href="#">Witaj :  <b th:text = "${var2}"></b></a>
+        </li>
+        <li class="nav-item" th:case="20">
+          <a class="nav-link" th:href="@{/wyloguj}">Wyloguj</a>
+          <a class="nav-link" href="#">Witaj :  <b th:text = "${var2}"></b></a>
+          <a class="nav-link" th:href="@{/pokazoceny}">Oceny uczniow</a>
+        </li>
+        <p th:case="*"></p>
+      </div>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+<h1 class = "text-center" > Dodaj uzytkownika </h1>
+<div class = "container">
+  <div class = "row">
+
+    <a th:href="@{/register/new}">dodaj uzytkownika</a>
+    <a th:href="@{/login}">zaloguj sie</a>
+
+      </div>
+    </form>
+
+
+  </div>
+</div>
+</body>
+</html>
